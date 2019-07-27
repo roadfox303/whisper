@@ -1,7 +1,7 @@
 module ApplicationHelper
   def menu(svg_name,menu_title,path)
     content_tag(:li) do
-      content_tag(:a, href:path, class: 'icon_outer b_txt')do
+      content_tag(:a, class: 'icon_outer b_txt')do
         concat(
           content_tag(:span) do
             embedded_svg("#{svg_name}.svg", class: "menu_icon")
@@ -35,28 +35,28 @@ module ApplicationHelper
             content_tag(:div, class: "log_footer") do
               concat(
                 content_tag(:div) do
-                  content_tag(:a, href:"#", class: "hover_blue") do
+                  content_tag(:a, class: "hover_blue") do
                     embedded_svg("comment.svg", class: "menu_icon")
                   end
                 end
               )
               concat(
                 content_tag(:div) do
-                  content_tag(:a, href:"#", class: "hover_green") do
+                  content_tag(:a, class: "hover_green") do
                     embedded_svg("repeat.svg", class: "menu_icon")
                   end
                 end
               )
               concat(
                 content_tag(:div) do
-                  content_tag(:a, href:"#", class: "hover_pink") do
+                  content_tag(:a, class: "hover_pink") do
                     embedded_svg("love.svg", class: "menu_icon")
                   end
                 end
               )
               concat(
                 content_tag(:div) do
-                  content_tag(:a, href:"#", class: "hover_blue") do
+                  content_tag(:a, class: "hover_blue") do
                     embedded_svg("upload.svg", class: "menu_icon")
                   end
                 end

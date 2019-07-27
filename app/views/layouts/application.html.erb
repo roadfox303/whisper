@@ -7,6 +7,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type="text/javascript">
+  		$(function() {
+  			$('.modal').modaal({
+  				overlay_opacity: 0.3,
+  				overlay_close: 'false',
+  				animation: 'none',
+          content_source: '#modal'
+  			});
+  			$('.modal_close').on("click", function(){
+  				$('.modal').modaal('close');
+  			});
+  			autosize($('textarea'));
+  		});
+  	</script>
+
   </head>
 
   <body>
