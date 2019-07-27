@@ -1,3 +1,3 @@
 class WhisperLog < ApplicationRecord
-  validates :textarea, length: { in: 1..140 }
+  validates :comment, length: { in: 1..140 }
 end
