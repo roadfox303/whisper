@@ -1,0 +1,78 @@
+<head>
+	<link rel="stylesheet" href="../../assets/stylesheets/normalize.css">
+	<link rel="stylesheet" href="../../assets/stylesheets/modaal.css">
+	<link rel="stylesheet" href="../../assets/stylesheets/whispers.css">
+	<script src='../../assets/javascripts/jquery.3.4.1.min.js'></script>
+	<script src="../../assets/javascripts/modaal.js"></script>
+	<script src="../../assets/javascripts/autosize.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('.modal').modaal({
+				overlay_opacity: 0.3,
+				overlay_close: 'false',
+				animation: 'none'
+			});
+			$('.modal_close').on("click", function(){
+				$('.modal').modaal('close');
+			});
+			autosize($('textarea'));
+		});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<header id="left-column">
+			<nav id="main_navi">
+				<ul>
+					<%= menu("home","ホーム","#") %>
+					<%= menu("topic","話題を検索","#") %>
+					<%= menu("notice","通知","#") %>
+					<%= menu("mail","メッセージ","#") %>
+					<%= menu("bookmark","ブックマーク","#") %>
+					<%= menu("list","リスト","#") %>
+					<%= menu("profile","プロフィール","#") %>
+					<%= menu("more","もっと見る","#") %>
+					<li><a href="#modal" id="whispe_L" class="modal">Whisper</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div id="main_contents">
+			<div id="center-column">
+				<div id="whisp_logs">
+					<ul >
+						<% @my_whisper_logs.each do |logs| %>
+						<%= my_logs(logs) %>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+			<div id="right-column">
+				right
+				<nav>
+
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div id="modal" style="display:none;">
+		<div id="modal_whisper">
+			<div class="close_box">
+				<p class="modal_close">×</p>
+			</div>
+			<div id="modal_content">
+				<div class="log_left">
+					<%= embedded_svg("profile.svg", class: "menu_icon") %>
+				</div>
+				<div class="log_right">
+					<div class="content">
+						<%= text_area :page, :comtent, placeholder:"いまどうしてる？" %>
+					</div>
+				</div>
+				<div class="log_footer">
+					<div class="icons"><div>
+					<a href="javascript:form.submit()" class="whisp_submit">Whisper</a>
+				</div>
+			<div>
+		</div>
+	</div>
+</body>
