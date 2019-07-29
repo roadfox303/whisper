@@ -94,6 +94,15 @@ html,body{
   color: #00acee;
 }
 
+#notice{
+  font-size: 2rem;
+  line-height: 2rem;
+  height: 2rem;
+  padding: 15px;
+  border-bottom: solid 6px rgb(230,236,240);
+  color: #00acee;
+}
+
 /* my wisper logs */
 #whisp_logs ul{
   display: block;
@@ -293,7 +302,9 @@ html,body{
 textarea:focus {
 outline: #ffffff;
 }
-
+.hiddenBtn{
+  display: none;
+}
 /* responcive */
 @media screen and (max-width:1264px){
 }

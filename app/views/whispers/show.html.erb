@@ -1,0 +1,21 @@
+<div id="wrapper">
+	<div id="modal_whisper">
+		<div class="close_box">
+			<p class="modal_close">×</p>
+		</div>
+		<div id="modal_content">
+			<div class="log_left">
+				<%= embedded_svg("profile.svg", class: "menu_icon") %>
+			</div>
+			<div class="log_right">
+				<div class="content">
+					<%= @whisper_log.comment %>
+				</div>
+			</div>
+			<div class="log_footer">
+				<div class="icons"><div>
+					<%= link_to 'ブログ一覧に戻る', whispers_path %>
+			</div>
+		<div>
+	</div>
+</div>

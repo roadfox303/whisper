@@ -1,0 +1,23 @@
+<div id="wrapper">
+	<div id="modal_whisper">
+		<div class="close_box">
+			<p class="modal_close">×</p>
+		</div>
+		<div id="modal_content">
+			<%= form_with(model: @whisper_log, url: whisper_path(@whisper_log.id), local: true ) do |form| %>
+			<div class="log_left">
+				<%= embedded_svg("profile.svg", class: "menu_icon") %>
+			</div>
+			<div class="log_right">
+				<div class="content">
+					<%= form.text_area :comment %>
+				</div>
+			</div>
+			<div class="log_footer">
+				<div class="icons"><div>
+					<%= form.submit %>
+			</div>
+			<% end %>
+		<div>
+	</div>
+</div>

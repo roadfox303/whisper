@@ -1,0 +1,23 @@
+<div id="wrapper">
+	<div id="modal_whisper">
+		<div class="close_box">
+		</div>
+		<%= form_with(model: @whisper, url: whispers_path, local: true ) do |form| %>
+		<%= form.hidden_field :comment %>
+		<div id="modal_content">
+			<div class="log_left">
+				<%= embedded_svg("profile.svg", class: "menu_icon") %>
+			</div>
+			<div class="log_right">
+				<div class="content">
+					<%= @whisper.comment %>
+				</div>
+			</div>
+			<div class="log_footer">
+				<div class="icons"><div>
+					<%= form.submit "コメント" %>
+			</div>
+		<div>
+		<% end %>
+	</div>
+</div>

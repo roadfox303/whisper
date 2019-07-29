@@ -16,16 +16,48 @@
 	</header>
 	<div id="main_contents">
 		<div id="center-column">
+			<div id="notice"><%= notice %></div>
 			<div id="whisp_logs">
 				<ul >
-					<% @my_whisper_logs.each do |logs| %>
-					<%= my_logs(logs) %>
+					<% @whisper_logs.each do |logs| %>
+					<li>
+						<div class="log_left"></div>
+						<div class="log_right">
+							<div class="log_header">
+								<a><%= @user_name %></a>
+							</div>
+							<div class="content"><p><%= logs.comment %></p></div>
+							<div class="log_footer">
+								<div>
+									<a href="<%= whisper_path(logs.id) %>" class="hover_blue">
+										<%= embedded_svg("monitor.svg", class: "menu_icon") %>
+									</a>
+								</div>
+								<div>
+									<a href="<%= edit_whisper_path(logs.id) %>" class="hover_green">
+										<%= embedded_svg("edit.svg", class: "menu_icon") %>
+									</a>
+								</div>
+								<div>
+									<a href="<%= whisper_path(logs.id) %>" data-method="delete" class="hover_pink">
+										<%= embedded_svg("delete.svg", class: "menu_icon") %>
+									</a>
+								</div>
+								<div>
+									<a class="hover_blue">
+										<%= embedded_svg("upload.svg", class: "menu_icon") %>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
 					<% end %>
 				</ul>
 			</div>
 		</div>
 		<div id="right-column">
 			right
+
 			<nav>
 
 			</nav>
@@ -38,18 +70,21 @@
 			<p class="modal_close">×</p>
 		</div>
 		<div id="modal_content">
+			<%= form_with(model: @whisper, url: confirm_whispers_path, local: true ) do |form| %>
 			<div class="log_left">
 				<%= embedded_svg("profile.svg", class: "menu_icon") %>
 			</div>
 			<div class="log_right">
 				<div class="content">
-					<%= text_area :page, :comtent, placeholder:"いまどうしてる？" %>
+					<%= form.text_area :comment, placeholder:"いまどうしてる？" %>
 				</div>
 			</div>
 			<div class="log_footer">
 				<div class="icons"><div>
-				<a href="javascript:form.submit()" class="whisp_submit">Whisper</a>
+				<%= form.submit class:"hiddenBtn" %>
+				<a class="whisp_submit">Whisper</a>
 			</div>
+			<% end %>
 		<div>
 	</div>
 </div>

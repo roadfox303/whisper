@@ -7,12 +7,12 @@ users = [
 User.create! users
 
 whisper_logs = [
-  { user_id: '2', comment:'あいうえおかきくこ'},
-  { user_id: '2', comment:'テスト' },
-  { user_id: '4', comment:'あああああああああ' },
-  { user_id: '3', comment:'ｓｓｓｓｓｓｓ' },
-  { user_id: '1', comment:'はらへった' },
-  { user_id: '2', comment:'でｊｋｖｆｒんｊｆｋｆｒ' },
-  { user_id: '3', comment:'mkfrokosdfg' }
+  { comment:'あいうえおかきくこ'},
+  { comment:'テスト' },
+  { comment:'あああああああああ' },
+  { comment:'ｓｓｓｓｓｓｓ' },
+  { comment:'はらへった' },
+  { comment:'でｊｋｖｆｒんｊｆｋｆｒ' },
+  { comment:'mkfrokosdfg' }
 ]
 WhisperLog.create! whisper_logs
