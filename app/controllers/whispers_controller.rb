@@ -1,6 +1,5 @@
 class WhispersController < ApplicationController
   before_action :set_id, only: [:edit, :update, :show, :destroy]
-
   def index
     @user_data = User.where(email: "suneo@gmail.com")
     @user_name = @user_data[0][:name]

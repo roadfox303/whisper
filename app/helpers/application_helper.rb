@@ -11,7 +11,6 @@ module ApplicationHelper
       end
     end
   end
-
   private
   def embedded_svg filename, options={}
     file = File.read(Rails.root.join('app', 'assets', 'images', 'svg', filename))
