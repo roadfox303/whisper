@@ -15,6 +15,7 @@ module Whisper
     config.assets.precompile += %w( modaal.css )
     config.assets.precompile += %w( jquery.3.4.1.min.js )
     config.assets.precompile += %w( modaal.js )
+    config.time_zone = 'Tokyo'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
