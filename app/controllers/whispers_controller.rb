@@ -12,8 +12,15 @@ class WhispersController < ApplicationController
   end
 
   def create
-    @whisper = WhisperLog.create(whisper_params)
-    whisper_check(@whisper.save, "create")
+    @whisper = WhisperLog.new(whisper_params)
+
+    if params[:back]
+      @whisper_logs = WhisperLog.all
+      render :index
+    elsif @whisper.save
+      whisper_check(@whisper.save, "create")
+    end
+
   end
 
   def edit

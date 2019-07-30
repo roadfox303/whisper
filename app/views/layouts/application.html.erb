@@ -4,7 +4,7 @@
     <title>Whisper</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript">
   		$(function() {
@@ -19,7 +19,11 @@
   			});
   			$('.modal_close').on("click", function(){
   				$('.modal').modaal('close');
+          $('#whisper_log_comment').val("");
   			});
+        if ($('#whisper_log_comment').val() != "") {
+          $('.modal').modaal('open');
+        }
   			autosize($('textarea'));
   		});
   	</script>
