@@ -15,6 +15,7 @@ module Whisper
     config.assets.precompile += %w( modaal.css )
     config.assets.precompile += %w( jquery.3.4.1.min.js )
     config.assets.precompile += %w( modaal.js )
+    config.active_record.default_timezone = :local
     config.time_zone = 'Tokyo'
 
     # Settings in config/environments/* take precedence over those specified here.
