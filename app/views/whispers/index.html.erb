@@ -21,7 +21,7 @@
 				<ul >
 					<% @whisper_logs.each do |logs| %>
 					<li>
-						<div class="log_left"></div>
+						<div class="log_left"><%= embedded_svg("profile.svg") %></div>
 						<div class="log_right">
 							<div class="log_header">
 								<a><%= @user_name %></a>

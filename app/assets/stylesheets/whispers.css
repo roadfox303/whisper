@@ -47,6 +47,11 @@ html,body{
 }
 
 /* header menus */
+#main_navi {
+  position: fixed;
+  top: 0;
+  width: 274px;
+}
 #main_navi ul{
   display: block;
   list-style: none;
